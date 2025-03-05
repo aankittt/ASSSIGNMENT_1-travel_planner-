@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Travel Planner</title>
+</head>
+<body>
+    <header>
+        <div class="logo>">
+            <span>smart travel planner</span>
+        </div>
+
+    <nav>
+        <ul id="menulist">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Plan a Trip</a></li>
+            <li><a href="#">Trip History</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">User Profile</a></li>
+        </ul>
+    </nav>
+    <div class="menu_icon">
+    <span class="" onclick="toggleMenu()">&equiv</span>
+    </div>
+    </header>
+
+    <main>
+        <section class="heroSection-container"> 
+            <div class="heroSection">
+                <h1>Find Your Dream Trips In One Place</h1>
+                <span> booking you favorite place was never this easy</span>
+                <button class="primary-button">Explore</button>
+            </div>
+        </section>
+
+        <section class="trip_details-container">
+            <form>
+                <div>
+                <label for="destination">Destination: </label>
+                <input type="text" id="destination" name="destination" placeholder="Enter Destination" required>
+                <div id="destination" class="error-message"></div>    
+                </div>
+
+                <div>
+                    <label for="startDate"> Start Date :</label>
+                    <input type="date" id="startDate" name="startDate" required />
+                    <div id="startDateError" class="error-message"></div>
+                </div>
+        
+                <div>
+                    <label for="endDate"> End Date :</label>
+                    <input type="date" id="endDate" name="endDate" required />
+                    <div id="endDateError" class="error-message"></div>
+                </div>
+
+                <div>
+                    <label for="preference">Preferences</label>
+                    <select name="preferences" id="preferences">
+                    <option value="default">select</option>
+                    <option value="accommodation">Accommodation</option>
+                    <option value="transportation">Transportation</option>
+                    <option value="activities">Activities</option>
+                    <option value="dietary">Dietary Preferences</option>\
+                    </select>
+                <div id="preferenceError" class="error-message"></div>
+                </div>
+
+                <button type="button" class="primary-button" id="tripDetailsButton">Explore</button>
+            </form>
+        </section>
+
+    <section class="grid-cards-container">
+        <div class="user-profile-card">
+            
+        </div>
+    </section>
+
+    </main>
+
+
+
+    
+</body>
+</html>
