@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Travel Planner</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
 <body>
     <header>
@@ -21,7 +24,7 @@
         </ul>
     </nav>
     <div class="menu_icon">
-    <span class="" onclick="toggleMenu()">&equiv</span>
+    <span class="" onclick="toggleMenu()">&equiv;</span>
     </div>
     </header>
 
@@ -72,14 +75,155 @@
 
     <section class="grid-cards-container">
         <div class="user-profile-card">
-            
+            <h2>user-details</h2>
+            <!-- profile image -->
+            <img src="images/user.png" alt="user" class="profile_image">
+            <!-- profile details    -->
+            <div class="user-details">
+                <h3>name:Ankit Tripathi</h3> 
+                <p>Location: Delhi, India </p>
+            </div>
+            <!-- travel preference -->
+            <div class="travel-preferences">
+                <h4>Travel Preferences</h4>
+                <ol type="i">
+                  <li>
+                    <span class="preference-title">Budget:</span> $1500 - $2500
+                  </li>
+                  <li>
+                    <span class="preference-title">Interests:</span> Adventure,
+                    Nature, Culture
+                  </li>
+                  <li>
+                    <span class="preference-title">Travel Style:</span> Solo Travel,
+                    Budget Friendly
+                  </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <h2>Trip Summary</h2>
+            <div class="trip-info">
+                <h3>Destination: New York City, NY</h3>
+                <p>Start Date: Jan 10 2025</p>
+                <p>End Date: Jan 15 2025</p>
+                <p>Status: Confirmed</p>
+        </div>
+
+        <div class="travel-type"><h3>Travel Type</h3>
+            <ul>
+                <li>Accommodation</li>
+                <li>Transportation</li>
+                <li>Activities</li>
+                <li>Dietary Preferences</li>
+            </ul>
+        </div>
+        <div class="trip-cost">
+            <h3>Trip Cost</h3>
+            <p>Estimated Cost: $2,500.00</p>
+            <p>
+              <small
+                >Cost estimate will be updated once trip details are
+                confirmed.</small
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+            <h2>Testimonials</h2>
+  
+            <!-- Testimonials List in 2x2 Grid -->
+            <ul class="testimonial-list">
+              <li class="testimonial">
+                <img
+                  src="./profile picture.jpg"
+                  alt="User's profile image"
+                  class="testimonial-image"
+                />
+                <div class="testimonial-content">
+                  <p class="testimonial-text">
+                    "This app has made my travels so much easier! The personalized
+                    trip suggestions are spot-on, and I love the detailed
+                    itineraries."
+                  </p>
+                  <p class="testimonial-name">- Jane Doe</p>
+                </div>
+              </li>
+  
+              <li class="testimonial">
+                <img
+                  src="./profile picture.jpg"
+                  alt="User's profile image"
+                  class="testimonial-image"
+                />
+                <div class="testimonial-content">
+                  <p class="testimonial-text">
+                    "I’ve been to so many places, but this app helped me find
+                    hidden gems I would never have discovered on my own. Highly
+                    recommend!"
+                  </p>
+                  <p class="testimonial-name">- John Smith</p>
+                </div>
+              </li>
+  
+              <li class="testimonial">
+                <img
+                  src="./profile picture.jpg"
+                  alt="User's profile image"
+                  class="testimonial-image"
+                />
+                <div class="testimonial-content">
+                  <p class="testimonial-text">
+                    "Absolutely love the itinerary suggestions. They made planning
+                    my vacation so stress-free. Will definitely use this app
+                    again!"
+                  </p>
+                  <p class="testimonial-name">- Sarah Lee</p>
+                </div>
+              </li>
+  
+              <li class="testimonial">
+                <img
+                  src="./profile picture.jpg"
+                  alt="User's profile image"
+                  class="testimonial-image"
+                />
+                <div class="testimonial-content">
+                  <p class="testimonial-text">
+                    "The app's real-time updates helped me adjust my plans on the
+                    go. It was a game-changer during my trip!"
+                  </p>
+                  <p class="testimonial-name">- Mark Johnson</p>
+                </div>
+              </li>
+            </ul>
+            <div class="add-testinomal-form">
+                <input type="text" class="testimonial-input" placeholder="Add your testimonial here" />
+                <button class="add-testimonial-btn" type="submit">Submit</button>
+            </div>
         </div>
     </section>
-
     </main>
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p>
+                    Contact us:
+                    <a href="mailto:info@smarttravelplanner.com"
+                      >info@smarttravelplanner.com</a
+                    >
+                  </p>
+                  <p>Phone: +123 456 7890</p>
+              
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Smart Travel Planner. All rights reserved.</p>
+          </div>
+        </div>
+    </footer>
 
-
-
-    
+<script src="script.js"></script>
 </body>
 </html>

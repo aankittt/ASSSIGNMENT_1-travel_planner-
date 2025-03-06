@@ -1,248 +1,267 @@
-                                                              <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Smart Travel Planner</title>
+    <title>Travel Planner</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-      <div class="navbar-header">
-        <h1>Smart Travel Planner</h1>
+    <header>
+      <div class="logo">
+        <span>Smart Travel Planner</span>
       </div>
-      <div class="navbar-links">
-        <ul class="nav-list">
-          <li><a href="#home-screen" aria-label="Go to Home">Home</a></li>
-          <li><a href="#trip-history" aria-label="Go to Trip History">Trip History</a></li>
+
+      <nav>
+        <ul id="menuList">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Plan a Trip</a></li>
+          <li><a href="#">Trip History</a></li>
+          <li><a href="#">Trip History</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">User Profile</a></li>
         </ul>
-        <div class="profile-image">
-          <img src="images/profile.jpg" alt="Profile Image" />
+      </nav>
+
+      <div class="menu-icon">
+        <span class="" onclick="toggleMenu()">&equiv;</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="heroSection-container">
+        <div class="heroSection">
+          <h1>Find your dream trips in one place</h1>
+          <span> booking you favorite place was never this easy</span>
+          <button class="primary-button">Explore</button>
         </div>
-      </div>
-    </nav>
+      </section>
 
-    <!-- Home Section -->
-    <section id="home-screen" class="section">
-      <!-- Hero Image -->
-      <div class="hero">
-        <img src="images/beach.jpg" alt="Beautiful beach" />
-      </div>
+      <section class="tripDetails-container">
+        <form>
+          <div>
+            <label for="destination"> Destination :</label>
+            <input
+              type="text"
+              id="destination"
+              name="destination"
+              placeholder="Enter Destination"
+              required
+            />
+            <div id="destinationError" class="error-message"></div>
+          </div>
 
-      <!-- Search Bar -->
-      <div class="search-bar">
-        <form id="search-form" onsubmit="return validateForm()">
-          <div class="search-input">
-            <img src="images/placeholder.png" alt="Search Destination Icon" />
-            <input type="text" id="destination" placeholder="Where do you want to go?" required />
+          <div>
+            <label for="startDate"> Start Date :</label>
+            <input type="date" id="startDate" name="startDate" required />
+            <div id="startDateError" class="error-message"></div>
           </div>
-          <div class="search-input">
-            <img src="images/calendar.png" alt="Departure Date Icon" />
-            <input type="date" id="departure-date" placeholder="Departure Date" required />
+
+          <div>
+            <label for="endDate"> End Date :</label>
+            <input type="date" id="endDate" name="endDate" required />
+            <div id="endDateError" class="error-message"></div>
           </div>
-          <div class="search-input">
-            <img src="images/calendar.png" alt="Return Date Icon" />
-            <input type="date" id="return-date" placeholder="Return Date" required />
-          </div>
-          <div class="search-input">
-            <img src="images/preferences.png" alt="Preferences Icon" />
-            <select id="preferences-dropdown" name="preferences-dropdown" required>
-              <option value="">Choose your preference</option>
-              <option value="Nature">Nature</option>
-              <option value="Mountains">Mountains</option>
-              <option value="Beach">Beach</option>
-              <option value="Temple">Temple</option>
+
+          <div>
+            <label for="preferences"> Preferences :</label>
+            <select id="preferences" name="preferences" required>
+              <option value="default">Select</option>
+              <option value="accommodation">Accommodation</option>
+              <option value="transportation">Transportation</option>
+              <option value="activities">Activities</option>
+              <option value="dietary">Dietary Preferences</option>
             </select>
+            <div id="preferenceError" class="error-message"></div>
           </div>
-          <button type="submit" class="search-button">Search</button>
+
+          <button type="button" class="primary-button" id="tripDetailsButton">
+            Explore
+          </button>
         </form>
-      </div>
+      </section>
 
-      <!-- Error Message -->
-      <div id="error-message" class="error-message" style="display: none">
-        Please fill in all the fields.
-      </div>
+      <section class="grid-cards-container">
+        <div class="user-profile-card">
+          <h2>User Details</h2>
 
-      <!-- Recommendations Section -->
-      <div class="recommendations">
-        <h2>Places You Must Visit</h2>
-        <div class="recommendation-cards">
-          <div class="card">
-            <a href="#">
-              <img src="images/varnasi.jpg" alt="Varnasi" />
-            </a>
-            <div class="card-info">
-              <b>Varnasi</b>
-              <ul>
-                <li>Kashi Vishwanath</li>
-                <li>Saket Mochan</li>
-                <li>IIT B.H.U</li>
-              </ul>
-            </div>
+          <!-- Profile Image -->
+          <img
+            src="./profile picture.jpg"
+            alt="User's profile image"
+            class="profile-image"
+          />
+
+          <!-- User Details -->
+          <div class="user-details">
+            <h3>Jane Smith</h3>
+            <p>Location: New York City, NY</p>
           </div>
-          <div class="card">
-            <a href="#">
-              <img src="images/prayagraj.jpg" alt="Prayagraj" />
-            </a>
-            <div class="card-info">
-              <b>Prayagraj</b>
-              <ul>
-                <li>Sangam</li>
-                <li>University Of Allahabad</li>
-                <li>Anand Bhawan</li>
-              </ul>
-            </div>
-          </div>
-          <div class="card">
-            <a href="#">
-              <img src="images/lucknown.jpg" alt="Lucknow" />
-            </a>
-            <div class="card-info">
-              <b>Lucknow</b>
-              <ul>
-                <li>Indira Gandhi Planetarium</li>
-                <li>Bara Imambara</li>
-                <li>Amrapali Water Park</li>
-              </ul>
-            </div>
-          </div>
-          <div class="card">
-            <a href="#">
-              <img src="images/ayodhya.jpg" alt="Ayodhya" />
-            </a>
-            <div class="card-info">
-              <b>Ayodhya</b>
-              <ul>
-                <li>Ram Janmabhoomi</li>
-                <li>Shri Hanuman Garhi Mandir</li>
-                <li>Kanak Bhawan</li>
-              </ul>
-            </div>
+
+          <!-- Travel Preferences -->
+          <div class="travel-preferences">
+            <h4>Travel Preferences</h4>
+            <ul>
+              <li>
+                <span class="preference-title">Budget:</span> $1500 - $2500
+              </li>
+              <li>
+                <span class="preference-title">Interests:</span> Adventure,
+                Nature, Culture
+              </li>
+              <li>
+                <span class="preference-title">Travel Style:</span> Solo Travel,
+                Budget Friendly
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Footer Section -->
+        <div class="summary-card">
+          <h2>Trip Summary</h2>
+
+          <!-- Trip Information -->
+          <div class="trip-info">
+            <h3>Trip Overview</h3>
+            <p>Destination: Paris, France</p>
+            <p>Dates: June 10, 2025 - June 20, 2025</p>
+            <p>Status: Planning</p>
+          </div>
+
+          <!-- Travel Type -->
+          <div class="travel-type">
+            <h3>Travel Type</h3>
+            <p>Type: Vacation</p>
+            <p>Accommodation: Hotel</p>
+          </div>
+
+          <!-- Trip Cost Placeholder -->
+          <div class="trip-cost">
+            <h3>Trip Cost</h3>
+            <p>Estimated Cost: $2,500.00</p>
+            <p>
+              <small
+                >Cost estimate will be updated once trip details are
+                confirmed.</small
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <h2>Testimonials</h2>
+
+          <!-- Testimonials List in 2x2 Grid -->
+          <ul class="testimonial-list">
+            <li class="testimonial">
+              <img
+                src="./profile picture.jpg"
+                alt="User's profile image"
+                class="testimonial-image"
+              />
+              <div class="testimonial-content">
+                <p class="testimonial-text">
+                  "This app has made my travels so much easier! The personalized
+                  trip suggestions are spot-on, and I love the detailed
+                  itineraries."
+                </p>
+                <p class="testimonial-name">- Jane Doe</p>
+              </div>
+            </li>
+
+            <li class="testimonial">
+              <img
+                src="./profile picture.jpg"
+                alt="User's profile image"
+                class="testimonial-image"
+              />
+              <div class="testimonial-content">
+                <p class="testimonial-text">
+                  "I’ve been to so many places, but this app helped me find
+                  hidden gems I would never have discovered on my own. Highly
+                  recommend!"
+                </p>
+                <p class="testimonial-name">- John Smith</p>
+              </div>
+            </li>
+
+            <li class="testimonial">
+              <img
+                src="./profile picture.jpg"
+                alt="User's profile image"
+                class="testimonial-image"
+              />
+              <div class="testimonial-content">
+                <p class="testimonial-text">
+                  "Absolutely love the itinerary suggestions. They made planning
+                  my vacation so stress-free. Will definitely use this app
+                  again!"
+                </p>
+                <p class="testimonial-name">- Sarah Lee</p>
+              </div>
+            </li>
+
+            <li class="testimonial">
+              <img
+                src="./profile picture.jpg"
+                alt="User's profile image"
+                class="testimonial-image"
+              />
+              <div class="testimonial-content">
+                <p class="testimonial-text">
+                  "The app's real-time updates helped me adjust my plans on the
+                  go. It was a game-changer during my trip!"
+                </p>
+                <p class="testimonial-name">- Mark Johnson</p>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Add New Testimonial Form -->
+          <div class="add-testimonial-form">
+            <input
+              type="text"
+              placeholder="Add your testimonial"
+              class="testimonial-input"
+            />
+            <button class="add-testimonial-btn">Submit</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <footer>
-      <div class="social-icons">
-        <ul>
-          <li><a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook Icon" /></a></li>
-          <li><a href="https://www.twitter.com/" target="_blank" aria-label="Twitter"><img src="images/twitter.png" alt="Twitter Icon" /></a></li>
-          <li><a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><img src="images/linkedin.png" alt="LinkedIn Icon" /></a></li>
-        </ul>
-      </div>
-      <div class="footer-content">
-        <p>&copy; 2025 Smart Travel Planner. All Rights Reserved.</p>
-        <p>
-          <a href="#about">About Us</a> |
-          <a href="#contact">Contact</a> |
-          <a href="#privacy">Privacy Policy</a>
-        </p>
+      <div class="footer-container">
+        <div class="contact-info">
+          <p>
+            Contact us:
+            <a href="mailto:info@smarttravelplanner.com"
+              >info@smarttravelplanner.com</a
+            >
+          </p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 Smart Travel Planner. All rights reserved.</p>
+        </div>
       </div>
     </footer>
-
-    <!-- Profile Section -->
-    <section id="profile-section" class="section">
-      <div class="profile">
-        <div class="profile-header">
-          <img src="images/profile.jpg" alt="Profile Image" class="profile-image" />
-          <div class="profile-details">
-            <p>Name: Shivang Maurya</p>
-            <p>Country: India</p>
-            <p>Email: abc@abcd.com</p>
-          </div>
-        </div>
-
-        <!-- Favorite Destinations -->
-        <div class="favorite-destinations">
-          <h2>Favorite Destinations</h2>
-          <div class="favorite-cards">
-            <div class="card">
-              <img src="images/canada.jpg" alt="Banff National Park, Canada" />
-              <div class="card-info">
-                <b>Banff National Park, Canada</b>
-              </div>
-            </div>
-            <div class="card">
-              <img src="images/maldives.jpg" alt="Maldives" />
-              <div class="card-info">
-                <b>Maldives</b>
-              </div>
-            </div>
-            <div class="card">
-              <img src="images/tokyo.jpg" alt="Tokyo, Japan" />
-              <div class="card-info">
-                <b>Tokyo, Japan</b>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Upcoming Trips -->
-        <div class="upcoming-trips">
-          <h2>Upcoming Trips</h2>
-          <div class="trip-cards">
-            <div class="card">
-              <img src="images/newyork.jpg" alt="New York City" />
-              <div class="card-info">
-                <b>New York City, USA - Feb 2025</b>
-              </div>
-            </div>
-            <div class="card">
-              <img src="images/turkey.jpg" alt="Istanbul, Turkey" />
-              <div class="card-info">
-                <b>Istanbul, Turkey - Apr 2025</b>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Travel History -->
-        <div class="travel-history">
-          <h2>Travel History</h2>
-          <div class="trip-cards">
-            <div class="card">
-              <img src="images/paris.jpg" alt="Paris, France" />
-              <div class="card-info">
-                <b>Paris, France - Oct 2024</b>
-                <p>Visited: 21 Oct 2024 - 26 Oct 2024</p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="images/grandcanyon.jpg" alt="Grand Canyon, USA" />
-              <div class="card-info">
-                <b>Grand Canyon, USA - Jun 2024</b>
-                <p>Visited: 21 Jun 2024 - 26 Jun 2024</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Trip History Section -->
-    <section id="trip-history" class="section">
-      <h2>Travel History</h2>
-      <div class="trip-cards">
-        <div class="card">
-          <img src="images/paris.jpg" alt="Paris, France" />
-          <div class="card-info">
-            <b>Paris, France - Oct 2024</b>
-            <p>Visited: 21 Oct 2024 - 26 Oct 2024</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="images/grandcanyon.jpg" alt="Grand Canyon, USA" />
-          <div class="card-info">
-            <b>Grand Canyon, USA - Jun 2024</b>
-            <p>Visited: 21 Jun 2024 - 26 Jun 2024</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <script src="script.js"></script>
+    <script src="validation.js"></script>
   </body>
 </html>

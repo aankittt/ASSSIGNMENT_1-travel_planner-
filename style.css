@@ -1,0 +1,954 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Rubik", serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+  }
+  
+  /* Style for invalid input fields */
+  input.invalid,
+  select.invalid {
+    border: 1px solid red;
+  }
+  
+  /* Header Styles */
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    color: var(--neutral-color);
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  /* Logo styles */
+  header .logo span {
+    font-family: "Carter One", serif;
+    width: 150px;
+    height: auto;
+    color: var(--primary-text-color);
+  }
+  
+  /* Navigation styles */
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    align-items: center;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav ul li a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+  
+  nav ul li a:hover {
+    border-bottom: 2px solid var(--primary-text-color);
+  }
+  
+  @media (max-width: 600px) {
+    nav ul {
+      position: absolute;
+      top: 4rem;
+      left: 0;
+      right: 0;
+      text-align: start;
+      background: #fff;
+      gap: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      transition: max-height 0.5s ease-in-out;
+      max-height: 0px; /* Start collapsed */
+    }
+  
+    nav ul li {
+      padding: 10px 0;
+      width: 100%;
+      text-align: center;
+    }
+  
+    nav ul li a {
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+  
+    .menu-icon {
+      display: block;
+      color: var(--primary-text-color);
+      cursor: pointer;
+    }
+  }
+  
+  @media (max-width: 414px) {
+    header .header-buttons {
+      display: none;
+    }
+  }
+  
+  /* Hero Section*/
+  .heroSection-container {
+    background: url("./hero\ section\ image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 90vh;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .heroSection {
+    font-size: 1rem;
+    color: #edecea;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: #3333338c;
+    letter-spacing: 5px;
+  }
+  
+  .heroSection :first-child {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: normal;
+  }
+  
+  .heroSection :last-child {
+    margin-top: 1rem;
+  }
+  
+  .primary-button {
+    background-color: #e54169;
+    color: #edecea;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    border-radius: 2rem;
+    /* backdrop-filter: blur(1.2rem); */
+  }
+  
+  @media (max-width: 926px) {
+    .heroSection-container {
+      height: 85vh;
+    }
+  
+    .heroSection h1 {
+      font-size: 2.8rem;
+    }
+  
+    .heroSection span {
+      font-size: 1.2rem;
+    }
+  
+    .heroSection .primary-button {
+      padding: 12px 24px;
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .heroSection-container {
+      height: 80vh;
+      text-align: center;
+    }
+  
+    .heroSection h1 {
+      font-size: 2rem; /* Slightly smaller heading for tablets */
+    }
+  
+    .heroSection span {
+      font-size: 1rem; /* Adjusted font size for a better fit */
+    }
+  
+    .heroSection .primary-button {
+      width: 20%;
+      padding: 12px 20px;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heroSection-container {
+      height: 70vh;
+      text-align: center;
+    }
+  
+    .heroSection h1 {
+      font-size: 2rem;
+    }
+  
+    .heroSection span {
+      font-size: 1rem;
+    }
+  
+    .heroSection .primary-button {
+      width: 20%;
+      padding: 10px 15px;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 390px) {
+    .heroSection-container {
+      height: 80vh;
+      text-align: center;
+    }
+  
+    .heroSection h1 {
+      font-size: 0.5rem;
+    }
+  
+    .heroSection span {
+      font-size: 0.8rem;
+    }
+  
+    .heroSection .primary-button {
+      width: 30%;
+      padding: 10px 15px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* tripDetails form classes*/
+  .tripDetails-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #edecea;
+    height: 100%;
+  }
+  
+  .tripDetails-container form {
+    width: 75%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 2rem;
+    background-color: #fff;
+    transform: translateY(-50%);
+    padding: 3.5rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tripDetails-container form div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    justify-content: start;
+    align-items: start;
+  }
+  
+  .tripDetails-container form label {
+    font-size: 0.8rem;
+    color: #333;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .tripDetails-container form input,
+  select {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input:focus,
+  select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  input::placeholder,
+  select::placeholder {
+    color: transparent;
+  }
+  
+  @media (max-width: 1112px) {
+    .tripDetails-container form {
+      width: 95%;
+      transform: translateY(0%);
+      margin: 3rem 1rem 2rem 1rem;
+    }
+  
+    .tripDetails-container form div {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 926px) {
+    .tripDetails-container form {
+      padding: 2rem;
+      width: 92%;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 1rem;
+      transform: translateY(0%);
+    }
+  
+    .tripDetails-container form div {
+      width: 100%;
+    }
+  
+    .tripDetails-container .primary-button {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 1rem;
+    }
+  
+    .tripDetails-container form input,
+    .tripDetails-container form select {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .tripDetails-container form {
+      padding: 2rem;
+      width: 100%;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 1rem;
+      transform: translateY(0%);
+    }
+  
+    .tripDetails-container form div {
+      width: 100%;
+    }
+  
+    .tripDetails-container .primary-button {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 1rem;
+    }
+  
+    .tripDetails-container form input,
+    .tripDetails-container form select {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tripDetails-container form {
+      padding: 1.5rem;
+      width: 100%;
+      margin: 1rem 1rem 1rem 1rem;
+      transform: translateY(0%);
+    }
+  
+    .tripDetails-container form div {
+      width: 100%;
+    }
+  
+    .tripDetails-container .primary-button {
+      width: 100%;
+      padding: 12px 20px;
+    }
+  }
+  
+  @media (max-width: 390px) {
+    .tripDetails-container form {
+      padding: 1rem;
+      width: 100%;
+      flex-direction: column;
+      margin: 1rem 1rem 0rem 1rem;
+      gap: 1.2rem;
+    }
+  
+    .tripDetails-container form div {
+      width: 100%;
+    }
+  
+    .tripDetails-container .primary-button {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 1rem;
+    }
+  
+    .tripDetails-container form input,
+    .tripDetails-container form select {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Grid card container classes*/
+  
+  .grid-cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns by default */
+    background-color: #edecea;
+    padding: 0rem 2rem 2rem 2rem;
+    gap: 2rem 2rem;
+    color: #333;
+  }
+  
+  /* Media query for tablets or smaller screens */
+  @media (max-width: 768px) {
+    .grid-cards-container {
+      grid-template-columns: 1fr;
+      padding: 0rem 1rem 2rem 1rem;
+    }
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 480px) {
+    .grid-cards-container {
+      grid-template-columns: 1fr;
+      padding: 0rem 0.5rem 2rem 0.5rem;
+    }
+  }
+  
+  @media (max-width: 390px) {
+    .grid-cards-container {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+      gap: 1rem;
+    }
+  }
+  
+  /* User Profile classes */
+  .user-profile-card {
+    border: 1px solid #e1e1e1;
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.062);
+    width: 100%;
+    box-sizing: border-box;
+    transition: ease 0.5sec;
+  }
+  
+  .user-profile-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .profile-image {
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-details h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin: 0;
+  }
+  
+  .user-details p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 0.3125rem;
+  }
+  
+  .travel-preferences h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.625rem;
+    color: #333;
+  }
+  
+  .travel-preferences ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .travel-preferences li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .preference-title {
+    font-weight: bold;
+    color: #e54169;
+    margin-right: 0.3125rem;
+  }
+  
+  /* Media Queries for User Profile */
+  @media (max-width: 768px) {
+    .user-profile-card {
+      padding: 1.5rem;
+      width: 100%;
+    }
+  
+    .profile-image {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .user-profile-card {
+      padding: 1rem;
+      width: 100%;
+    }
+  
+    .profile-image {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+  
+  @media (max-width: 390px) {
+    .user-profile-card {
+      padding: 1rem;
+      width: 100%;
+    }
+  
+    .profile-image {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+  
+    .user-details h3 {
+      font-size: 1.2rem;
+    }
+  
+    .user-details p {
+      font-size: 1rem;
+    }
+  
+    .travel-preferences h4 {
+      font-size: 1.2rem;
+    }
+  
+    .travel-preferences ul li {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Summary Card Classes */
+  
+  .summary-card {
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: #ffff;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.062);
+  }
+  
+  .summary-card h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .summary-card {
+      padding: 1.5rem;
+      width: 100%;
+    }
+  
+    .summary-card h2 {
+      font-size: 1.2rem;
+    }
+  
+    .trip-info h3,
+    .travel-type h3,
+    .trip-cost h3,
+    .additional-notes h3 {
+      font-size: 1rem;
+    }
+  
+    .trip-info p,
+    .travel-type p,
+    .trip-cost p,
+    .additional-notes p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .summary-card {
+      padding: 1.5rem;
+      width: 100%;
+    }
+  
+    .summary-card h2 {
+      font-size: 1.2rem;
+    }
+  
+    .trip-info h3,
+    .travel-type h3,
+    .trip-cost h3,
+    .additional-notes h3 {
+      font-size: 1rem;
+    }
+  
+    .trip-info p,
+    .travel-type p,
+    .trip-cost p,
+    .additional-notes p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 390px) {
+    .summary-card {
+      padding: 1.5rem;
+      width: 100%;
+    }
+  
+    .summary-card h2 {
+      font-size: 1.2rem;
+    }
+  
+    .trip-info h3,
+    .travel-type h3,
+    .trip-cost h3,
+    .additional-notes h3 {
+      font-size: 1rem;
+    }
+  
+    .trip-info p,
+    .travel-type p,
+    .trip-cost p,
+    .additional-notes p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  .trip-info,
+  .trip-duration,
+  .travel-type,
+  .trip-cost,
+  .additional-notes {
+    width: 100%;
+  }
+  
+  .trip-info h3,
+  .travel-type h3,
+  .trip-cost h3,
+  .additional-notes h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #444;
+  }
+  
+  .trip-info p,
+  .travel-type p,
+  .trip-cost p,
+  .additional-notes p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0.5rem 0;
+  }
+  
+  .trip-cost p small {
+    font-size: 0.9rem;
+    color: #999;
+  }
+  
+  .trip-cost {
+    border-top: 1px solid #ccc;
+    padding-top: 1rem;
+  }
+  
+  /* Testimonials Card Classes */
+  
+  .testimonial-card {
+    border-radius: 1rem;
+    padding: 3rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.062);
+    grid-column: 1/3;
+  }
+  
+  .testimonial-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .testimonial-list {
+    list-style-type: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 0;
+  }
+  
+  .testimonial {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s;
+  }
+  
+  .testimonial:hover {
+    transform: translateY(-5px);
+  }
+  
+  .testimonial-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+  }
+  
+  .testimonial-content {
+    max-width: 90%;
+  }
+  
+  .testimonial-text {
+    font-size: 1rem;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 5px;
+  }
+  
+  .testimonial-name {
+    font-size: 0.9em;
+    color: #444;
+    font-weight: 600;
+  }
+  
+  /* Add New Testimonial Form */
+  .add-testimonial-form {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .testimonial-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 1rem;
+  }
+  
+  .add-testimonial-btn {
+    padding: 8px 12px;
+    background-color: #e54169;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .add-testimonial-btn:hover {
+    background-color: #a52847;
+  }
+  
+  /* Media Queries for Testimonials */
+  @media (max-width: 768px) {
+    .testimonial-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .testimonial-card {
+      grid-column: 1/2;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .testimonial-card {
+      padding: 2rem;
+      width: 100%;
+    }
+  
+    .testimonial-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .testimonial-image {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .testimonial-text {
+      font-size: 0.9rem;
+    }
+  
+    .testimonial-name {
+      font-size: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 390px) {
+    .testimonial-card {
+      padding: 2rem;
+      width: 100%;
+    }
+  
+    .testimonial-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .testimonial-image {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .testimonial-text {
+      font-size: 0.9rem;
+    }
+  
+    .testimonial-name {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Footer Classes */
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-info,
+  .copyright {
+    margin: 2rem 0;
+  }
+  
+  .contact-info a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  @media (min-width: 768px) {
+    .footer-container {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+  
+    .contact-info,
+    .copyright {
+      margin: 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    footer {
+      padding: 1.5rem 0;
+    }
+  
+    .footer-container {
+      flex-direction: column;
+      padding: 0 1rem;
+    }
+  
+    .contact-info,
+    .copyright {
+      margin: 0.5rem 0;
+    }
+  
+    .contact-info a {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 390px) {
+    footer {
+      padding: 1.5rem 0;
+    }
+  
+    .footer-container {
+      flex-direction: column;
+      padding: 0 1rem;
+    }
+  
+    .contact-info,
+    .copyright {
+      margin: 0.5rem 0;
+    }
+  
+    .contact-info a {
+      font-size: 0.9rem;
+    }
+  }
+  
